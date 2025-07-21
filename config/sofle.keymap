@@ -43,29 +43,5 @@
             >;
             display-name = "RAISE";
         };
-
-        // Layer 3 - ADJUST (kích hoạt khi nhấn cả LOWER + RAISE)
-        layer_3 {
-            bindings = <
-&trans     &trans    &trans    &trans    &trans    &trans       &trans    &trans    &trans    &trans    &trans    &trans
-&kp BOOT   &trans    &to 0     &trans    &trans    &trans       &trans    &trans    &trans    &trans    &trans    &trans
-&trans     &trans    &trans    &trans    &trans    &trans       &trans    &kp VOLD  &kp C_MUTE &kp VOLU  &trans    &trans
-&trans     &trans    &trans    &trans    &trans    &trans       &trans    &kp PREV  &kp PLAY  &kp NEXT  &trans    &trans
-&trans     &trans    &trans    &trans    &trans    &trans       &trans    &trans    &trans    &trans    &trans    &trans
-            >;
-            display-name = "ADJUST";
-        };
-    };
-
-    combos {
-        compatible = "zmk,combos";
-        
-        // Combo để kích hoạt layer ADJUST khi nhấn cả 2 phím LOWER + RAISE
-        adjust_combo {
-            timeout-ms = <50>;
-            key-positions = <4 8>; // Vị trí của 2 phím mo1 và mo2 trong keymap
-            bindings = <&mo 3>;
-            layers = <0>;
-        };
     };
 };
