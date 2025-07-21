@@ -99,9 +99,9 @@ layers:
   - $
   - '%'
   - {t: '$$mdi:transfer$$', type: trans}
-  - CIRC
+  - ^
   - '&'
-  - ASTR
+  - '*'
   - (
   - )
   - '|'
@@ -146,8 +146,8 @@ layers:
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - INS
-  - PSCR
-  - APP
+  - PRINTSCREEN
+  - CONTEXT MENU
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
@@ -179,7 +179,7 @@ layers:
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '=', s: +}
   - HOME
-  - ASTR
+  - '*'
   - END
   - '%'
   - {t: '$$mdi:transfer$$', type: trans}
