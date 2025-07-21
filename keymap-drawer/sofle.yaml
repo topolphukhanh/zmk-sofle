@@ -143,7 +143,7 @@ layers:
   - RGB EFF
   - RGB EFR
   - RGB SPI
-  - {t: '$$mdi:transfer$$', type: trans}
+  - '&studio_unlock'
   - $$mdi:bluetooth-off$$
   - INS
   - PRINTSCREEN
