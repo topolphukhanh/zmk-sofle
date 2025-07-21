@@ -2,6 +2,33 @@
 #include <dt-bindings/zmk/keys.h>
 
 / {
+    behaviors {
+        prvwd: behavior_prev_word {
+            compatible = "zmk,behavior-mod-morph";
+            label = "PREV_WORD";
+            #binding-cells = <0>;
+            bindings = 
+                #ifdef OS_MAC
+                <&kp LALT(LEFT)>;  // macOS: Option + ←
+                #else
+                <&kp LCTRL(LEFT)>; // Windows/Linux: Ctrl + ←
+                #endif
+        };
+        nxtwd: behavior_next_word {
+            compatible = "zmk,behavior-mod-morph";
+            label = "NEXT_WORD";
+            #binding-cells = <0>;
+            bindings = 
+                #ifdef OS_MAC
+                <&kp LALT(RIGHT)>;  // macOS: Option + →
+                #else
+                <&kp LCTRL(RIGHT)>; // Windows/Linux: Ctrl + →
+                #endif
+        };
+    };
+};
+
+/ {
     keymap {
         compatible = "zmk,keymap";
 
@@ -32,7 +59,7 @@
         layer_2 {
             bindings = <
 &trans  &trans     &trans           &trans              &trans     &trans      &trans  &trans     &trans    &trans        &trans     &trans        &trans
-&trans  &kp INS    &kp PRINTSCREEN  &kp K_CONTEXT_MENU  &trans     &trans      &trans  &kp PG_UP  &kp HOME  &kp UP        &kp END    &kp LC(BSPC)  &kp BSPC
+&trans  &kp INS    &kp PRINTSCREEN  &kp K_CONTEXT_MENU  &trans     &trans      &trans  &kp PG_UP  &prvwd    &kp UP        &nxtwd    &kp LC(BSPC)  &kp BSPC
 &trans  &kp LALT   &kp LCTRL        &kp LSHFT           &trans     &kp CAPS    &trans  &kp PG_DN  &kp LEFT  &kp DOWN      &kp RIGHT  &kp DEL       &kp BSPC
 &trans  &kp LC(Z)  &kp LC(X)        &kp LC(C)           &kp LC(V)  &trans      &trans  &kp EQUAL  &kp HOME  &kp ASTERISK  &kp END    &kp PRCNT     &trans
 &trans  &trans     &trans           &trans              &trans     &trans      &trans  &trans     &trans    &trans        &trans     &trans
