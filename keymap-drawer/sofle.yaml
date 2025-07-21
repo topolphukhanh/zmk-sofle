@@ -63,7 +63,7 @@ layers:
   - $$mdi:keyboard-space$$
   - layer2
   - {t: '-', s: _}
-  - {t: '[', s: '{'}
+  - +
   - RGUI
   layer1:
   - {t: '$$mdi:transfer$$', type: trans}
